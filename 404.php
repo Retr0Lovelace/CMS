@@ -1,22 +1,8 @@
-<?php
-
-$error = $_SERVER['REDIRECT_STATUS'];
-
-$error_title = '';
-$error_message = '';
-
-if ($error == 404) {
-  $error_title = '404 Page non trouvée';
-  $error_message = 'Désolé, mais la page que vous tentez d\'afficher n\'existe pas.';
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <title>Page Not Found</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -39,9 +25,7 @@ if ($error == 404) {
       vertical-align: middle;
       margin: 2em auto;
     }
-    i{
-      margin-right: 12px;
-    }
+
     h1 {
       color: #555;
       font-size: 2em;
@@ -70,8 +54,9 @@ if ($error == 404) {
 </head>
 
 <body>
-  <h1><i class="far fa-grin-beam-sweat"></i><?php echo $error_title; ?></h1>
-  <p><?php echo $error_message; ?></p>
+  <h1>Page Not Found</h1>
+  <p>Sorry, but the page you were trying to view does not exist.</p>
 </body>
 
 </html>
+<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
