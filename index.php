@@ -2,7 +2,8 @@
 include_once 'inc/connect.php';
 $req = $bdd->query('SELECT * FROM user WHERE id = 1 AND mdp = "admin"');
 $donnee = $req->fetch();
-if(!empty(($donnee))){header('Location: ./login.html');
+if(!empty(($donnee))){
+  header('Location: ./login.html');
 }
 else {
 	$req = $bdd->query('SELECT * FROM config');
@@ -10,371 +11,550 @@ else {
 }
 ?>
 <!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>
-		PortFolio BTS SIO SLAM |
-		<?php echo $a["prenom"].' '.$a["nom"]; ?>
-	</title>
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-	<link rel="stylesheet" href="./assets/css/bootstrap.css">
-	<link rel="stylesheet" href="./assets/css/main.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PortFolio BTS SIO SLAM | <?php echo $a["prenom"].' '.$a["nom"]; ?></title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-transparents fixed-top" id="mainNav">
-		<div class="container-fluid">
-			<a class="navbar-brand mx-auto" onclick="topFunction()" href="#mainNav"><img src="./assets/img/lprs.png" alt="Logo Lycée Robert Schuman"></a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto nav_ul">
-					<li class="nav-item mx-auto pt-2 nav_li"><a class="nav-link " href="#About">A propos</a></li>
-					<li class="nav-item mx-auto pt-2 nav_li"><a class="nav-link " href="#Scroll_Skills">Compétences</a></li>
-					<li class="nav-item mx-auto pt-2 nav_li"><a class="nav-link " href="#Scroll_Projets">Projets</a></li>
-					<li class="nav-item mx-auto pt-2 nav_li"><a class="nav-link " href="#Veille">Veille technologique</a></li>
-					<li class="nav-item mx-auto nav_li">
-						<a class="nav-link " href="#Scroll_Contact" tabindex="-1" aria-disabled="true"><button class="btn btn_contact btn-block btn-primary">Contact</button></a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<a id="button" onclick="topFunction()"><i class="fas fa-2x fa-angle-double-up"></i></a>
-	<section class="header">
-		<div class="headers">
-			<div class="Presentation">
-				<h1>
-					Mr.
-					<?php echo $a["prenom"].' '.$a["nom"]; ?>
-				</h1>
-				<p>
-					Etudiant en BTS SIO (Services Informatiques aux Organisations)
-					</br>
-					option SLAM(Solutions Logicielles et Applications Métiers).
-				</p>
-				<div class="button">
-					<a class="text-white" href="./assets/docs/CV- Benjamin Francisco.pdf" target="_blank"><button class="btn_ btn-CV" type="button">Télécharger mon CV</button></a>
-					<a class="text-white" href="#Scroll_Projets"><button class="btn_ btn-Projets" type="button">Mes Projets</button></a>
-				</div>
-			</div>
-			<div class="img">
-				<img src="./assets/img/Groupe 34863.png" class="float-end photo mt-3" alt="Photo de Profil">
-			</div>
-			<div class="scrolldown_">
-				<a class=" text-white" href="#About"><img src="./assets/img/Mouse.png" class="scroll_down" alt="scrolldown"></a>
-			</div>
-		</div>
-	</section>
-	<hr class="Hr">
-	<section id="About">
-		<div class="col-xs-12 Header_About text-center text-white">
-			<h2>A propos</h2>
-			<p>
-				Diplômé d'un Baccalauréat Professionnel S.N (Système Numérique), je suit depuis septembre au lycée privée
-				<br>
-				Robert Schuman à Dugny, un BTS SIO(Services Informatiques aux Organisations) option SLAM (Solutions
-				<br>
-				Logicielles et Applications Métier) dans la perspective d'obtenir un Master en Sécurité Informatique (Bac +5).
-			</p>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-				<h4 class="text-center About_h4_top">BTS SIO option SISR</h4>
-				<h4 class="text-center About_h4_bot">Solutions d’infrastructure, systèmes et réseaux!</h4>
-				<div class="About_texte">
-					<p class="text-white">
-						L’option Solution d’infrastructure, systèmes et réseaux forme
-						<br>
-						des professionnels des réseaux et équipements
-						<br>
-						informatiques (installation, maintenance, sécurité). En sortant
-						<br>
-						d’un BTS SIO SISR, vous serez capables de gérer et
-						<br>
-						d’administrer le réseau d’une société et d’assurer sa sécurité
-						<br>
-						et sa maintenance.
-						<br>
-						Les techniciens supérieurs en informatique option SISR,
-						<br>
-						peuvent accéder aux métiers de :
-						<br>
-					</p>
-					<ul class="text-white">
-						<li><p>Administrateur systèmes et réseaux</p></li>
-						<li><p>Informaticien support et déploiement</p></li>
-						<li><p>Pilote d’exploitation</p></li>
-						<li><p>Support systèmes et réseaux</p></li>
-						<li><p>Technicien d’infrastructure</p></li>
-						<li><p>Technicien de production</p></li>
-						<li><p>Technicien micro et réseaux</p></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<h4 class="text-center About_h4_top">BTS SIO option SLAM</h4>
-				<h4 class="text-center About_h4_bot">Solutions Logicielles et Applications Métiers!</h4>
-				<div class="About_texte">
-					<p class="text-white">
-						L’option Solutions logicielles et applications métiers forme
-						<br>
-						des spécialistes des logiciels (rédaction d’un cahier des charges,
-						<br>
-						formulation des besoins et spécifications, développement,
-						<br>
-						intégration au sein de la société).
-						<br>
-						Les techniciens supérieurs en informatique option slam, sont
-						<br>
-						préparés aux métiers de :
-						<br>
-					</p>
-					</br>
-					<ul class="text-white">
-						<li><p>Développeur d’applications informatiques</p></li>
-						<li><p>Développeur informatique</p></li>
-						<li><p>Analyste d’applications ou d’études</p></li>
-						<li><p>Analyste programmeur</p></li>
-						<li><p>Programmeur analyste</p></li>
-						<li><p>Programmeur d’applications</p></li>
-						<li><p>Responsable des services applicatifs</p></li>
-						<li><p>Technicien d’études informatiques</p></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</section>
-	<hr class="Hr" id="Scroll_Skills">
-	<section class="Skills" id="Skills">
-		<div class="col-12 Header_About text-center text-white">
-			<h2>Compétences</h2>
-			<p>
-				Toutes ces connaissances ont été acquises de différentes façons. Elles ont été acquises durant mes études et d'autres
-				<br>
-				par ma propre initiative en essayant de mettre en place des solutions.
-			</p>
-		</div>
-		<div class="row skills_box">
-			<a href="https://www.mysql.com/fr/" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fas fa-4x fa-database skills_logos"></i>
-					</div>
-					<p>
-						SQL
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://developer.mozilla.org/fr/docs/Web/Guide/HTML/HTML5" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fab fa-4x fa-html5 skills_logos"></i>
-					</div>
-					<p>
-						HTML/CSS
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://www.php.net/manual/fr/intro-whatis.php" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<img class="skills_logos" src="https://img.icons8.com/ios/50/000000/php-server.png"/>
-					</div>
-					<p>
-						PHP
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-		</div>
-		<div class="row skills_box">
-			<a href="https://www.java.com/fr/" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fab fa-4x fa-java skills_logos"></i>
-					</div>
-					<p>
-						JAVA
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://www.python.org/" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fab fa-4x fa-python skills_logos"></i>
-					</div>
-					<p>
-						Python
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://docs.microsoft.com/fr-fr/dotnet/csharp/" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<img class="resize skills_logos" src="./assets/img/csharp-1-1175241.png"/>
-					</div>
-					<p>
-						C#
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-		</div>
-		<div class="row skills_box">
-			<a href="https://fr.wikibooks.org/wiki/Les_r%C3%A9seaux_informatiques/Les_mod%C3%A8les_OSI_et_TCP" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fas fa-3x fa-terminal skills_logos"></i>
-					</div>
-					<p>
-						Adressage IP
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://fr.wikipedia.org/wiki/Virtualisation" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fas fa-3x fa-server skills_logos"></i>
-					</div>
-					<p>
-						Virtualisation
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-			<a href="https://www.microsoft.com/fr-fr/microsoft-365/microsoft-office" target="_blank">
-				<div class="box col-lg-4 col-md-6">
-					<div class="skills_logo">
-						<i class="fas fa-3x fa-mail-bulk skills_logos"></i>
-					</div>
-					<p>
-						Bureautique
-					</p>
-					<i class="fas fa-2x fa-arrow-right"></i>
-				</div>
-			</a>
-		</div>
-		<div class="col-12">
-			<a class="text-white center" href="./assets/docs/e6_tableau_de_compétences.pdf" target="_blank"><button class="btn_ btn-TC" type="button">Tableau de Compétences</button></a>
-		</div>
-	</section>
-	<section class="Projets" id="Scroll_Projets">
-		<div class="screen_project">
-			<p>
-				<span><?php echo $a["nb_projets"]; ?></span>
-				<br>
-				Projets
-			</p>
-		</div>
-		<div class="col-xs-12 Header_Projets text-center text-white">
-			<h2>Projets</h2>
-			<p>
-				Vous pouvez retrouver les différents projets que j'ai pu mener personnellement  et durant  mes études.
-			</p>
-		</div>
-		<div class="container">
-			<div class="col-md-2">
-				<div class="">
-					<a class="btn_ btn-githubs" href="<?php echo $a["link_github"]; ?>" target="_blank">
-						<button type="button" class="btn-github" name="button">
-							<i class="fab fa-2x  fa-github"></i>
-							<span>Github</span>
-						</button>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-10 d-flex cards">
-				<div class="card card-1" style="width: 18rem;">
-					<img src="./assets/img/Capture.JPG" class="card-img-top " alt="...">
-					<div class="card-body">
-						<a href="https://wedoschool.000webhostapp.com/" target="_blank" class="btn btn-primary">Projet<br>WeDoSchool</a>
-					</div>
-				</div>
-				<div class="card card-2" style="width: 18rem;">
-					<img src="./assets/img/Capture2.JPG" class="card-img-top" alt="...">
-					<div class="card-body">
-						<a href="https://devcomclub.ml/" target="_blank" class="btn btn-primary">Projet<br>DevCommunityClub</a>
-					</div>
-				</div>
-				<div class="card card-3" style="width: 18rem;">
-					<img src="./assets/img/Capture3.JPG" class="card-img-top" alt="...">
-					<div class="card-body">
-						<a href="#" class="btn btn-primary">Projet<br>Bientôt diponible</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="Veille">
-		<div class="col-12 mpt-3 Header_About text-center text-white">
-			<h2>Veille technologique</h2>
-			<p>
-				Pour la veille technologique, j'ai décidé de traiter le sujet de la Cybersécurité.
-			</p>
-		</div>
-		<h2 class="text-white ms-5 mb-3">Dossier :</h2>
-		<div class="col-md-12 Veille_cards">
-			<div class="card" style="width: 18rem;">
-				<img src="./assets/img/cybersecurité.jpg" class="card-img-top" alt="...">
-				<div class="card-body">
-					<h5 class="card-title">
-						Veille : 16/10/2020
-					</h5>
-					<a href="./assets/docs/Veille-Francisco.jpg" target="_blank" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<hr class="Hr" id="Scroll_Contact">
-	<section id="Contact">
-		<h2 class="Header_Contact text-white">Contact !</h2>
-		<div class="">
-			<div class="socials">
-				<a href="mailto:<?php echo $a["mail"]; ?>" target="_blank">
-					<div class="contact_logo">
-						<i class="fas fa-3x fa-envelope contact_logos"></i>
-					</div>
-					<p class="contact_text">
-						<span>Email</span>
-						</br>
-						b.francisco@lprs.fr
-					</p>
-				</a>
-				<div class="Find_me">
-					<h3>Retrouvez-moi sur !</h3>
-					<div class="social">
-						<a href="https://www.instagram.com/devcomclub/" target="_blank"><i class="fab fa-3x fa-instagram"></i></a>
-						<a href="" target="_blank" class="pe-5"><i class="fab fa-3x fa-linkedin-in"></i></a>
-					</div>
-				</div>
-				<form action="mail.php" method="post">
-					<div class="form-group-1">
-						<input type="text" class="me-3" id="name" name="nom" placeholder="Name">
-						<input type="email" id="mail" name="mail" placeholder="Email">
-					</div>
-					<div class="form-group-2">
-						<textarea class="msg mt-3" name="Message" rows="8" cols="80" placeholder="Message"></textarea>
-					</div>
-					<div class="form-group-3">
-						<input type="submit" class="mt-4" placeholder="Envoyer">
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-</section>
-<section id="Footer">
-	<p class="text-center">
-		Copyright © 2020 - Par la DevCommunityClub
-	</p>
-</section>
-<script type="text/javascript" src="js/scripts.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+<body id="page-top">
+
+  <!-- ======= Header/ Navbar ======= -->
+  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll" href="#page-top"><?php echo $a["prenom"].' '.$a["nom"]; ?></a>
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll active" href="index.php">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#about">A propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#service">Compétences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#work">Projets</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#blog">Veille technologique</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= Intro Section ======= -->
+  <div id="home" class="intro route bg-image" style="background-image: url(assets/img/intro-bg.jpg)">
+    <div class="overlay-itro"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <!--<p class="display-6 color-d">Hello, world!</p>-->
+          <h1 class="intro-title mb-4"><?php echo $a["prenom"].' '.$a["nom"]; ?></h1>
+          <p class="intro-subtitle"><span class="text-slider-items">Etudiant en BTS SIO (Services Informatiques aux Organisations),option SLAM (Solutions Logicielles et Applications Métiers).</span><strong class="text-slider"></strong></p>
+          <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
+        </div>
+      </div>
+    </div>
+  </div><!-- End Intro Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="box-shadow-full">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                      <div class="about-img">
+                        <img src="assets/img/testimonial-2.jpg" class="img-fluid rounded b-shadow-a" alt="">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 col-md-7">
+                      <div class="about-info">
+                        <p><span class="title-s">Nom: </span> <span><?php echo $a["prenom"].' '.$a["nom"]; ?></span></p>
+                        <p><span class="title-s">Status: </span> <span>Etudiant en BTS SIO option SLAM</span></p>
+                        <p><span class="title-s">Email: </span> <span><?php echo $a["mail"]; ?></span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-mf">
+                    <p class="title-s">Compétences</p>
+                    <span>HTML</span> <span class="pull-right">70%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>CSS3</span> <span class="pull-right">70%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>PHP</span> <span class="pull-right">50%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <span>JAVA</span> <span class="pull-right">15%</span>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="about-me pt-4 pt-md-0">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        A propos
+                      </h5>
+                    </div>
+                    <p class="lead">
+                      Diplômé d'un Baccalauréat Professionnel S.N (Système Numérique), je suit depuis septembre au lycée privée
+                      Robert Schuman à Dugny, un BTS SIO(Services Informatiques aux Organisations) option SLAM (Solutions
+                      Logicielles et Applications Métier) dans la perspective d'obtenir un Master en Sécurité Informatique (Bac +5).
+                    </p>
+                      <div>
+                          <a target="_blank" href="assets/docs/CV- Benjamin Francisco.pdf">
+                              <button type="button" class="btn btn-primary">Obtenir mon CV !</button>
+                          </a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="service" class="services-mf pt-5 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Compétences
+              </h3>
+              <p class="subtitle-a">
+                Toutes ces connaissances ont été acquises de différentes façons.<br>
+                Elles ont été acquises durant mes études et d'autrespar ma propre initiative en essayant de mettre en place des solutions.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="ion-monitor"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Web Design</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="ion-code-working"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Développement Web</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="ion-android-phone-portrait"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Responsive Design</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="ion-paintbrush"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Conception graphique</h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i class="ion-stats-bars"></i></span>
+              </div>
+              <div class="service-content">
+                <h2 class="s-title">Gestion d'Equipe</h2>
+              </div>
+            </div>
+          </div>
+            <div class="d-flex justify-content-center mb-5">
+                <a target="_blank" href="assets/docs/Portefeuille competences- Benjamin Francisco.pdf">
+                    <button type="button" class="btn btn-primary">Tableau de compétences !</button>
+                </a>
+            </div>
+        </div>
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Counter Section ======= -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container position-relative">
+        <div class="row">
+          <div class="col-sm-6 col-lg-6">
+            <div class="counter-box counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="ion-checkmark-round"></i></span>
+              </div>
+              <div class="counter-num">
+                <p class="counter"><?php echo $a["nb_projets"]; ?></p>
+                <span class="counter-text">PROJETS TERMINÉS</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-6">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="ion-ios-calendar-outline"></i></span>
+              </div>
+              <div class="counter-num">
+                <p class="counter">1</p>
+                <span class="counter-text">ANNÉE D'EXPÉRIENCE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Counter Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                PROJETS
+              </h3>
+              <p class="subtitle-a">
+                Vous pouvez retrouver les différents projets que j'ai pu mener personnellement et durant mes études.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="./assets/img/work-1.jpg" data-gall="portfolioGallery" class="venobox">
+                <div class="work-img">
+                  <img src="./assets/img/work-1.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">WeDoSchool</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">Développement Web</span> / <span class="w-date">3 oct. 2020</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="https://wedoschool.000webhostapp.com/" target="_blank"> <span class="ion-ios-plus-outline"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="./assets/img/work-2.jpg" data-gall="portfolioGallery" class="venobox">
+                <div class="work-img">
+                  <img src="./assets/img/work-2.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">DevCommunityClub</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">Développement Web</span> / <span class="w-date">28 oct. 2020</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="#" target="_blank"> <span class="ion-ios-plus-outline"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
+              <a href="./assets/img/work-3.jpg" data-gall="portfolioGallery" class="venobox">
+                <div class="work-img">
+                  <img src="./assets/img/work-3.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Bientôt en ligne</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">Bientôt</span> / <span class="w-date">...</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="#"> <span class="ion-ios-plus-outline"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog-mf sect-pt4 route">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center">
+              <h3 class="title-a">
+                Veille technologique
+              </h3>
+              <p class="subtitle-a">
+                Pour la veille technologique, j'ai décidé de traiter le sujet de la Cybersécurité.
+              </p>
+              <div class="line-mf"></div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card card-blog">
+              <div class="card-img">
+                <a href="./assets/docs/Veille-Francisco.jpg" target="_blank"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
+              </div>
+              <div class="card-body">
+                <div class="card-category-box">
+                  <div class="card-category">
+                    <h6 class="category">Cybersécurité</h6>
+                  </div>
+                </div>
+                <h3 class="card-title"><a href="blog-single.html">Cybersécurité : 16/10/2020</a></h3>
+                <p class="card-description">
+                  En pièce jointe vous retrouverez mon dossier de veille technologique sur la Cybersécurité
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="post-author">
+                  <a href="#">
+                    <img src="./assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                    <span class="author"><?php echo $a["prenom"].' '.$a["nom"]; ?></span>
+                  </a>
+                </div>
+                <div class="post-date">
+                  <span class="ion-ios-clock-outline"></span> 16/10/2020
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="col-md-4">
+                <div class="card card-blog">
+                    <div class="card-img">
+                        <a href="./assets/docs/Veille-Iman ABBAOUI2.jpg" target="_blank"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-category-box">
+                            <div class="card-category">
+                                <h6 class="category">Cybersécurité</h6>
+                            </div>
+                        </div>
+                        <h3 class="card-title"><a href="blog-single.html">Cybersécurité : 22/01/2020</a></h3>
+                        <p class="card-description">
+                            En pièce jointe vous retrouverez mon dossier de veille technologique sur la Cybersécurité
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="post-author">
+                            <a href="#">
+                                <img src="./assets/img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
+                                <span class="author"><?php echo $a["prenom"].' '.$a["nom"]; ?></span>
+                            </a>
+                        </div>
+                        <div class="post-date">
+                            <span class="ion-ios-clock-outline"></span> 22/01/2020
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section><!-- End Blog Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
+      <div class="overlay-mf"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="contact-mf">
+              <div id="contact" class="box-shadow-full">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="title-box-2">
+                      <h5 class="title-left">
+                        Contact !
+                      </h5>
+                    </div>
+                    <div>
+                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" name="nom" class="form-control" id="name" placeholder="Entrez votre Nom" data-rule="minlen:4" data-msg="Veuillez saisir au moins 4 caractères" required/>
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="email" class="form-control" name="mail" id="email" placeholder="Entrez votre Email" data-rule="email" data-msg="Veuillez saisir un e-mail valide" required/>
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" name="objet" id="subject" placeholder="Objet" data-rule="minlen:4" data-msg="Veuillez saisir au moins 8 caractères de sujet" required/>
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <div class="col-md-12 mb-4">
+                            <div class="form-group">
+                              <textarea class="form-control" name="message" rows="5" data-rule="required" placeholder="Message"></textarea>
+                              <div class="validate"></div>
+                            </div>
+                          </div>
+                          <!--<div class="col-md-12 text-center mb-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                          </div> -->
+                          <div class="col-md-12 text-center">
+                            <button type="submit" class="button button-a button-big button-rouded">Envoyer</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="title-box-2 pt-4 pt-md-0">
+                      <h5 class="title-left">
+                        Information
+                      </h5>
+                    </div>
+                    <div class="more-info">
+                      <p class="lead">
+                        Le meilleur moyen de me contacter est de passer par mon addresse mail grâce à ce formulaire de contact vous pourez aisément me contacter n'oublier pas de renseigner vos informations afin que je vous transmette une réponse sous peu.
+                      </p>
+                      <ul class="list-ico">
+                        <li><span class="ion-email"></span><?php echo $a["mail"]; ?></li>
+                      </ul>
+                    </div>
+                    <div class="socials">
+                      <ul>
+                        <li><a href="<?php echo $a["link_linkedin"]; ?>" target="_blank"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/devcomclub/" target="_blank"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
+                        <li><a href="<?php echo $a["link_github"]; ?>" target="_blank"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright 2020 - Par la <strong>DevCommunityClub</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>
