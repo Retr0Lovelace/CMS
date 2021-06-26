@@ -26,8 +26,8 @@ else {
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
@@ -80,7 +80,7 @@ else {
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="intro-title mb-4"><?php echo $a["prenom"].' '.$a["nom"]; ?></h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Etudiant en BTS SIO (Services Informatiques aux Organisations),option SLAM (Solutions Logicielles et Applications Métiers).</span><strong class="text-slider"></strong></p>
+          <p class="intro-subtitle"><span class="text-slider-items">Etudiante en BTS SIO (Services Informatiques aux Organisations),option SLAM (Solutions Logicielles et Applications Métiers).</span><strong class="text-slider"></strong></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
       </div>
@@ -106,7 +106,7 @@ else {
                     <div class="col-sm-6 col-md-7">
                       <div class="about-info">
                         <p><span class="title-s">Nom: </span> <span><?php echo $a["prenom"].' '.$a["nom"]; ?></span></p>
-                        <p><span class="title-s">Status: </span> <span>Etudiant en BTS SIO option SLAM</span></p>
+                        <p><span class="title-s">Status: </span> <span>Etudiante en BTS SIO option SLAM</span></p>
                         <p><span class="title-s">Email: </span> <span><?php echo $a["mail"]; ?></span></p>
                       </div>
                     </div>
@@ -139,17 +139,17 @@ else {
                       </h5>
                     </div>
                     <p class="lead">
-                      Diplômé d'un Baccalauréat Professionnel S.N (Système Numérique), je suit depuis septembre au lycée privée
-                      Robert Schuman à Dugny, un BTS SIO(Services Informatiques aux Organisations) option SLAM (Solutions
-                      Logicielles et Applications Métier) dans la perspective d'obtenir un Master en Sécurité Informatique (Bac +5).
+                      Diplômé d'un Baccalauréat SN (Système Numérique), je suis depuis septembre au lycée privée
+                      Robert Schuman à Dugny, ou je réalise un BTS SIO(Services Informatiques aux Organisations) option SLAM (Solutions
+                      Logicielles et Applications Métier) Dans la perspective d'obtenir un Master en Sécurité Informatique (Bac +5).
                     </p>
                       <div>
                           <a target="_blank" href="assets/docs/CV- Benjamin Francisco.pdf">
-                              <button type="button" class="btn btn-primary">Obtenir mon CV !</button>
+                            <button type="button" class="btn btn-primary btn-CV">Obtenir mon CV !</button>
                           </a>
                       </div>
                   </div>
-                </div>
+                </div>-
               </div>
             </div>
           </div>
@@ -168,7 +168,7 @@ else {
               </h3>
               <p class="subtitle-a">
                 Toutes ces connaissances ont été acquises de différentes façons.<br>
-                Elles ont été acquises durant mes études et d'autrespar ma propre initiative en essayant de mettre en place des solutions.
+                Elles ont été acquises durant mes études et d'autres par ma propre initiative en essayant de mettre en place des solutions.
               </p>
               <div class="line-mf"></div>
             </div>
@@ -225,14 +225,72 @@ else {
               </div>
             </div>
           </div>
-            <div class="d-flex justify-content-center mb-5">
-                <a target="_blank" href="assets/docs/Portefeuille competences- Benjamin Francisco.pdf">
-                    <button type="button" class="btn btn-primary">Tableau de compétences !</button>
-                </a>
-            </div>
         </div>
+          <div class="d-flex justify-content-center mb-5">
+              <a target="_blank" href="assets/docs/Portefeuille competences- Benjamin Francisco.pdf">
+                  <button type="button" class="btn btn-primary btn-CV">Tableau de compétences !</button>
+              </a>
+          </div>
       </div>
     </section><!-- End Services Section -->
+
+      <section id="situations" class="blog-mf sect-pt4 route">
+          <div class="container">
+              <div class="row">
+                  <div class="col-sm-12">
+                      <div class="title-box text-center">
+                          <h3 class="title-a">
+                              Situations Professionnelles
+                          </h3>
+                          <p class="subtitle-a">
+                              Les situations professionnelles que j'ai vécues jusqu'à présent.
+                          </p>
+                          <div class="line-mf"></div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card card-blog">
+                          <div class="card-body">
+                              <h3 class="card-title">Stagiaire Support Informatique</h3>
+                              <p class="card-description">
+                                  <b>Missions :</b> Téléphonie sur IP (VOIP), Masterisation De
+                                  Poste (Migration d'ancien Poste Windows 7 en Windows
+                                  10), Support Informatique (Suivi des utilisateurs via le
+                                  gestionnaire de Ticket GLPI ).
+                              </p>
+                          </div>
+                          <div class="card-footer">
+                              <div class="post-date">
+                                  <span class="ion-ios-clock-outline"></span> Préfecture de Bobigny – Janvier - Février 2019
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="card card-blog">
+                          <div class="card-body">
+                              <h3 class="card-title">Stagiaire Support Informatique</h3>
+                              <p class="card-description">
+                                  <b>Missions :</b> Masterisation De Poste (Migration d'ancien
+                                  Poste Windows 7 en Windows 10, Réalisation de Script en
+                                  commande DOS, Montage PC, Support Informatique (Suivi
+                                  des utilisateurs via le gestionnaire de Ticket GLPI )
+                              </p>
+                          </div>
+                          <div class="card-footer">
+                              <div class="post-date">
+                                  <span class="ion-ios-clock-outline"></span> Préfecture de Bobigny – Mai-Juin 2018
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
 
     <!-- ======= Counter Section ======= -->
     <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
@@ -284,22 +342,22 @@ else {
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="./assets/img/work-1.jpg" data-gall="portfolioGallery" class="venobox">
+              <a href="./assets/img/work-3.jpg" data-gall="portfolioGallery" class="venobox">
                 <div class="work-img">
-                  <img src="./assets/img/work-1.jpg" alt="" class="img-fluid">
+                  <img src="./assets/img/work-3.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
-                    <h2 class="w-title">WeDoSchool</h2>
+                    <h2 class="w-title">Bientôt en ligne</h2>
                     <div class="w-more">
-                      <span class="w-ctegory">Développement Web</span> / <span class="w-date">3 oct. 2020</span>
+                      <span class="w-ctegory">Bientôt</span> / <span class="w-date">...</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="https://wedoschool.000webhostapp.com/" target="_blank"> <span class="ion-ios-plus-outline"></span></a>
+                      <a href="#"> <span class="ion-ios-plus-outline"></span></a>
                     </div>
                   </div>
                 </div>
@@ -309,22 +367,22 @@ else {
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="./assets/img/work-2.jpg" data-gall="portfolioGallery" class="venobox">
+              <a href="./assets/img/work-3.jpg" data-gall="portfolioGallery" class="venobox">
                 <div class="work-img">
-                  <img src="./assets/img/work-2.jpg" alt="" class="img-fluid">
+                  <img src="./assets/img/work-3.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
-                    <h2 class="w-title">DevCommunityClub</h2>
+                    <h2 class="w-title">Bientôt en ligne</h2>
                     <div class="w-more">
-                      <span class="w-ctegory">Développement Web</span> / <span class="w-date">28 oct. 2020</span>
+                      <span class="w-ctegory">Bientôt</span> / <span class="w-date">...</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
-                      <a href="#" target="_blank"> <span class="ion-ios-plus-outline"></span></a>
+                      <a href="#"> <span class="ion-ios-plus-outline"></span></a>
                     </div>
                   </div>
                 </div>
@@ -388,7 +446,7 @@ else {
                     <h6 class="category">Cybersécurité</h6>
                   </div>
                 </div>
-                <h3 class="card-title"><a href="blog-single.html">Cybersécurité : 16/10/2020</a></h3>
+                <h3 class="card-title">Cybersécurité : 16/10/2020</h3>
                 <p class="card-description">
                   En pièce jointe vous retrouverez mon dossier de veille technologique sur la Cybersécurité
                 </p>
@@ -409,7 +467,7 @@ else {
             <div class="col-md-4">
                 <div class="card card-blog">
                     <div class="card-img">
-                        <a href="./assets/docs/Veille-Iman ABBAOUI2.jpg" target="_blank"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
+                        <a href="./assets/docs/Veille-Francisco.jpg" target="_blank"><img src="assets/img/post-1.jpg" alt="" class="img-fluid"></a>
                     </div>
                     <div class="card-body">
                         <div class="card-category-box">
@@ -417,7 +475,7 @@ else {
                                 <h6 class="category">Cybersécurité</h6>
                             </div>
                         </div>
-                        <h3 class="card-title"><a href="blog-single.html">Cybersécurité : 22/01/2020</a></h3>
+                        <h3 class="card-title">Cybersécurité : 22/01/2020</h3>
                         <p class="card-description">
                             En pièce jointe vous retrouverez mon dossier de veille technologique sur la Cybersécurité
                         </p>
@@ -510,8 +568,6 @@ else {
                     <div class="socials">
                       <ul>
                         <li><a href="<?php echo $a["link_linkedin"]; ?>" target="_blank"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
-                        <li><a href="https://www.instagram.com/devcomclub/" target="_blank"><span class="ico-circle"><i class="ion-social-instagram"></i></span></a></li>
-                        <li><a href="<?php echo $a["link_github"]; ?>" target="_blank"><span class="ico-circle"><i class="ion-social-github"></i></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -543,14 +599,11 @@ else {
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
